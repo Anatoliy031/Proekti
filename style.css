@@ -1,0 +1,132 @@
+/*
+  Основные стили для страницы с полезными сервисами ВОЛС.
+  Дизайн вдохновлён существующим сайтом Колокейшн: тёмный
+  градиентный фон, яркие акцентные цвета и карточная сетка.
+*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #e5f3ff;
+  /* Градиентный фон от тёмно‑синего к чуть более светлому */
+  background: linear-gradient(180deg, #031d42 0%, #0a3a8a 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Заглавный блок */
+.hero {
+  text-align: center;
+  padding: 4rem 1rem 2rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #00e0ff;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #a5bfe3;
+}
+
+/* Контейнер для карточек */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 2rem 1rem 3rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex: 1;
+}
+
+/* Общий стиль карточки: вся карточка является ссылкой */
+.card {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  padding: 2rem 1.5rem;
+  border-radius: 20px;
+  background: rgba(1, 18, 68, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Номер карточки: маленький квадрат с ярким градиентом */
+.card .icon {
+  background: linear-gradient(135deg, #00d4ff, #00ffa3);
+  color: #001f3f;
+  font-weight: 700;
+  font-size: 1.4rem;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  margin-bottom: 1.2rem;
+}
+
+.card .title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.card .desc {
+  font-size: 1rem;
+  color: #a5bfe3;
+  line-height: 1.4;
+}
+
+/* Подвал */
+footer {
+  text-align: center;
+  color: #6c8dc8;
+  font-size: 0.9rem;
+  padding: 2rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Адаптация под небольшие экраны */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .hero {
+    padding: 3rem 1rem 1.5rem;
+  }
+  .card {
+    padding: 1.5rem 1rem;
+  }
+  .card .icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.1rem;
+  }
+  .card .title {
+    font-size: 1.2rem;
+  }
+  .card .desc {
+    font-size: 0.95rem;
+  }
+}
